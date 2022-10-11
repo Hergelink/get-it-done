@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import Input from './Input';
+import Items from './Items';
 
 const initialList = [];
 
 function Main() {
   const [list, setList] = useState(initialList);
   const [name, setName] = useState('');
-  
-
 
   const handleChange = (e) => {
     setName(e.target.value);
   };
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     const newItem = list.concat({ name, id: uuidv4() });
 
     name.length > 0 ? setList(newItem) : alert('Please enter an item!');
 
     setName('');
+    e.target.reset();
   };
 
   const eraseItem = (e) => {
@@ -29,40 +31,16 @@ function Main() {
     });
   };
 
-
-
   return (
     <main>
       <div id='main-container'>
-        <div id='input-div'>
-          <h3>Add your to-do items below:</h3>
-          <input type='text' value={name} onChange={handleChange} />
-          <button id='add-button' type='button' onClick={handleClick}>
-            +Add
-          </button>
-        </div>
-
-        <div id='list-item-container'>
-          <ul>
-            {list.map((item) => {
-              return (
-                <div className='item-container'>
-                  <li key={item.id} >
-                    {item.name}
-                  
-                  </li>
-                  <button
-                      className='erase-button'
-                      id={item.id}
-                      onClick={eraseItem}
-                    >
-                      X
-                    </button>
-                </div>
-              );
-            })}
-          </ul>
-        </div>
+        <Input
+          initialList={initialList}
+          value={name}
+          handleChange={handleChange}
+          handleClick={handleClick}
+        />
+        <Items initialList={initialList} list={list} eraseItem={eraseItem} />
       </div>
     </main>
   );

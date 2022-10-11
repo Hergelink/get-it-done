@@ -13,7 +13,7 @@
 }
 
 body {
-  background-color: #79a9f5;
+  background-color: #0e2345;
   color: white;
 
   font-family: 'Roboto', sans-serif;
@@ -47,15 +47,16 @@ main {
 }
 
 #main-container {
-    margin-inline: auto;
+  margin-inline: auto;
+  margin-bottom: 2rem;
   width: 100%;
   min-height: 200px;
-  background-color: #0000ff88;
+  background-color: #0d0dfd88;
   color: black;
   border-radius: 8px;
 }
 
-#input-div {
+form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,9 +83,9 @@ input {
   cursor: pointer;
 }
 
-
-
-
+#add-button:hover {
+  background-color: #2727fa;
+}
 
 #list-item-container {
   width: 100%;
@@ -111,16 +112,23 @@ input {
   font-style: bold;
   border-radius: 50%;
   border: 0;
+  cursor: pointer;
+}
+
+.erase-button:hover {
+  background-color: rgb(255, 60, 0);
 }
 
 ul {
   color: white;
   list-style: none;
 }
-
+li {
+  width: 90%;
+}
 
 @media only screen and (min-width: 768px) {
-    #main-container {
-        max-width: 650px;
-    }
+  #main-container {
+    max-width: 650px;
   }
+}
