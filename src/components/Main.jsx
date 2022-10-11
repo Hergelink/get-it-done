@@ -6,7 +6,8 @@ const initialList = [];
 function Main() {
   const [list, setList] = useState(initialList);
   const [name, setName] = useState('');
-  const [isActive, setIsActive] = useState(false);
+  
+
 
   const handleChange = (e) => {
     setName(e.target.value);
@@ -34,9 +35,9 @@ function Main() {
     <main>
       <div id='main-container'>
         <div id='input-div'>
-          <p>Add your to-do items below:</p>
+          <h3>Add your to-do items below:</h3>
           <input type='text' value={name} onChange={handleChange} />
-          <button type='button' onClick={handleClick}>
+          <button id='add-button' type='button' onClick={handleClick}>
             +Add
           </button>
         </div>
