@@ -54,6 +54,41 @@ main {
   background-color: #0d0dfd88;
   color: black;
   border-radius: 8px;
+  position: relative;
+}
+
+#count-div {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #001eff;
+  border-radius: 50%;
+  color: white;
+  background-color: rgb(101, 101, 244);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+#count-info {
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #0000ff;
+  color: white;
+  width: 200px;
+  height: 80px;
+
+  position: absolute;
+  top: -5px;
+  left: -5px;
 }
 
 form {
@@ -84,7 +119,7 @@ input {
 }
 
 #add-button:hover {
-  background-color: #2727fa;
+  background-color: #001eff;
 }
 
 #list-item-container {
